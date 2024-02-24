@@ -1,7 +1,7 @@
 /*	Copyright(C)
-	Author: 479764650@qq.com
-	Description: Ôª±à³Ìµ÷ÊÔ¹¤¾ß
-	History: 2023/2/14
+    Author: 479764650@qq.com
+    Description: å…ƒç¼–ç¨‹è°ƒè¯•å·¥å…·
+    History: 2023/2/14
 */
 
 #ifndef DEBUG_TOOLS_H
@@ -9,27 +9,28 @@
 
 #include <iostream>
 
-// ¹©±àÒëÆÚ²é¿´ÀàĞÍĞÅÏ¢
-template<typename, typename ...> struct Dump;
+// ä¾›ç¼–è¯‘æœŸæŸ¥çœ‹ç±»å‹ä¿¡æ¯
+template <typename, typename...>
+struct Dump;
 
-// ÔËĞĞÊ±´òÓ¡.¿ÉÒÔÍ¨¹ı±àÒëÊ±µÄÖµ¼ÆËã£¬¶Ô×Ö·û´®½øĞĞºóĞø´¦Àí£¬²úÉúÒ»Ğ©ÓĞ¼ÛÖµµÄÓ¦ÓÃ
+// è¿è¡Œæ—¶æ‰“å°.å¯ä»¥é€šè¿‡ç¼–è¯‘æ—¶çš„å€¼è®¡ç®—ï¼Œå¯¹å­—ç¬¦ä¸²è¿›è¡Œåç»­å¤„ç†ï¼Œäº§ç”Ÿä¸€äº›æœ‰ä»·å€¼çš„åº”ç”¨
 #if __GNUC__
-template<typename ...Ts>
+template <typename... Ts>
 void PrintType()
 {
-	std::cout << _PRETTY_FUNCTION_ << std::endl;
+    std::cout << _PRETTY_FUNCTION_ << std::endl;
 }
 #elif _MSC_VER
-template<typename ...Ts>
+template <typename... Ts>
 void PrintType()
 {
-	std::cout << __FUNCSIG__ << std::endl;
+    std::cout << __FUNCSIG__ << std::endl;
 }
 #else
-template<typename ...Ts>
-void PrintType() {}
+template <typename... Ts>
+void PrintType()
+{
+}
 #endif
 
 #endif // !DEBUG_TOOLS_H
-
-

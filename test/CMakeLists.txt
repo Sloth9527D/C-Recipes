@@ -1,6 +1,13 @@
 add_subdirectory(googletest EXCLUDE_FROM_ALL)
 
-add_executable(RecipesTest test_main.cpp)
+include(include)
+
+set(test_src
+    test_main.cpp
+    graph_test.cpp
+)
+
+add_executable(RecipesTest ${test_src})
 
 target_include_directories(RecipesTest
   PUBLIC
